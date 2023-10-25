@@ -1,2 +1,2 @@
-![[imageExample](https://i.imgur.com/WeIul4F.png)]()
-![[imageError](https://i.imgur.com/FNaQf7F.png)]()
+![[imageExample](https://imgur.com/WeIul4F)]()
+![[imageError](https://imgur.com/FNaQf7F))]()
