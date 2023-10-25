@@ -1,0 +1,67 @@
+body {
+  background-image: url('https://truthtalk.uk/wp-content/uploads/2022/12/dreamstime_xl_14384299-scaled.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+#login-container {
+  padding: 200px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#password-container {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  padding: 20px;
+  border-radius: 3px;
+  margin: 0 auto;
+}
+
+#key-image {
+  position: relative;
+  margin: 0 auto;
+  width: 60px;
+  height: 60px;
+  top: 20px;
+}
+
+#lock-image {
+  margin: 2px;
+  width: 35px;
+  height: 35px;
+}
+
+.square {
+  border: #1c1c1c;
+  background-color: rgb(53, 53, 53);
+  width: 40px;
+  height: 40px;
+}
+
+#password {
+  padding: 10px;
+  color: rgb(197, 244, 255);
+  align-content: center;
+  background-color: #1c1c1c;
+  border-left: 10px;
+}
+
+#login-button {
+  font-family: consolas, monaco, monospace;
+  height: 40px;
+  width: 80px;
+  border-radius: 10px;
+  background-color: #2d2d2d;
+  color: white;
+  margin: 0 auto;
+}
+
+#login-button:hover {
+  background-color: #6f707a;
+}
