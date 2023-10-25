@@ -1,2 +1,2 @@
-![[imageExample](https://i.imgur.com/WeIul4F.png)]()
-![[imageError](imgur.com/FNaQf7F)]()
+![[imageExample](/Images/MainPage.png)]()
+![[imageError](/Images/WrongPassword.png)]()
