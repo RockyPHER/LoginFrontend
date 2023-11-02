@@ -4,6 +4,13 @@ body {
   justify-content: center;
 }
 
+.Matrix {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 12px;
+}
+
 #login-container {
   padding: 200px;
   margin: 25px;
@@ -23,6 +30,7 @@ body {
 }
 
 #key-image {
+  margin: 0 auto;
   width: 60px;
   height: 60px;
   top: 20px;
@@ -53,6 +61,7 @@ body {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 
 #login-button {
   font-family: consolas, monaco, monospace;

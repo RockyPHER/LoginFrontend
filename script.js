@@ -1,11 +1,12 @@
-const passwordInput = document.getElementById('password');
-const loginButton = document.getElementById('login-button');
+const matrix = document.getElementsByClassName("Matrix")[0];
 
-loginButton.addEventListener('click', function() {
-  const password = passwordInput.value;
-  if (password === '1002') {
-    window.location.href = 'site aonde vou subir a imagem';
-  } else {
-    alert('Senha incorreta. Tente novamente.');
-  }
-});
+var width = window.innerWidth;
+var heigth = window.innerHeight;
+var context = matrix.getContext("2d")
+context.font = "consolas, monaco, monospace";
+
+var str = "Allthosemomentswillbelostliketearsintherain"
+var rowArray = str.split("");
+
+context.fillStyle = '#339633';
+context.fillText(rowArray, 12, 12);
