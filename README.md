@@ -1,2 +1,2 @@
-![[imageExample](/Images/MainPage.png)]()
-![[imageError](/Images/WrongPassword.png)]()
+![imageMain](/Images/MainPage.png)
+![imageError](/Images/WrongPassword.png)
