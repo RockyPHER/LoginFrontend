@@ -5,8 +5,31 @@ var heigth = window.innerHeight;
 var context = matrix.getContext("2d")
 context.font = "consolas, monaco, monospace";
 
-var str = "Allthosemomentswillbelostliketearsintherain"
-var rowArray = str.split("");
+var randomChar = getRandomChar();
 
-context.fillStyle = '#339633';
-context.fillText(rowArray, 12, 12);
+var randomNum = Math.random()*10;
+
+var y = 15;
+var x = 15;
+
+setInterval(() => {
+
+    for(i = 0; i < 15; i++)
+    {
+        context.fillText(randomChar, x, y);
+        context.fillStyle = '#339633';
+        y+=randomNum;
+    }
+
+}, 100);
+
+
+
+function getRandomChar(){
+
+    const ascii = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    var randomChar = Math.random()*ascii.length;
+
+    return ascii.charAt(randomChar);
+}
