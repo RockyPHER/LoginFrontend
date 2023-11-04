@@ -1,35 +1,43 @@
 const matrix = document.getElementsByClassName("Matrix")[0];
 
-var width = window.innerWidth;
-var heigth = window.innerHeight;
+var width = matrix.width;
+var height = matrix.height;
 var context = matrix.getContext("2d")
-context.font = "consolas, monaco, monospace";
+context.font = "11px consolas";
+context.fillStyle = "#000";
 
-var randomChar = getRandomChar();
+var duration = 200;
 
-var randomNum = Math.random()*10;
+var fontSize = 11;
+var gridSize = fontSize+1;
 
-var y = 15;
-var x = 15;
 
-setInterval(() => {
+var numOfRows = height;
+var numOfColumns = width;
+var numElements = (numOfColumns*numOfRows)/gridSize;
 
-    for(i = 0; i < 15; i++)
-    {
-        context.fillText(randomChar, x, y);
-        context.fillStyle = '#339633';
-        y+=randomNum;
+for(i = 0; i < numElements; i++){
+    context.fillText(getRandomChar(), getRandomNum(width, gridSize), getRandomNum(height, gridSize));
+    console.log(i)
+}
+
+// for(i = 0; i < numElements; i++){
+    //     // context.clearRect(0, 0, width, height);
+    //     context.fillText(getRandomChar(), xRandomNum, yRandomNum, width);
+    //     console.log(xRandomNum);
+    // }
+    
+    function getRandomNum(int, gridSize) {
+        var random = Math.random()*(int/gridSize);
+        random = Math.floor(random)*gridSize;
+        return random;
     }
-
-}, 100);
-
-
-
-function getRandomChar(){
-
+    
+    function getRandomChar(){
+        
     const ascii = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     var randomChar = Math.random()*ascii.length;
-
+    
     return ascii.charAt(randomChar);
 }

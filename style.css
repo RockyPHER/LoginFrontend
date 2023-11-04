@@ -2,13 +2,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .Matrix {
-  height: 100%;
+  background-color: rgb(120, 120, 224);
+  height: 101.50%;
   width: 100%;
   font-size: 12px;
   position: absolute;
+  z-index: -1;
 }
 
 #login-container {
