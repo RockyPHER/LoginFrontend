@@ -8,36 +8,51 @@ context.fillStyle = "#000";
 
 var duration = 200;
 
-var fontSize = 11;
-var gridSize = fontSize+1;
+const fontSize = 11;
+const gridSize = fontSize + 1;
 
 
-var numOfRows = height;
-var numOfColumns = width;
-var numElements = (numOfColumns*numOfRows)/gridSize;
+const numOfRows = Math.floor(height / gridSize);
+const numOfColumns = Math.floor(width / gridSize);
+var numElements = numOfColumns * numOfRows;
 
-for(i = 0; i < numElements; i++){
-    context.fillText(getRandomChar(), getRandomNum(width, gridSize), getRandomNum(height, gridSize));
-    console.log(i)
+const elementsGrid = new Array(numOfRows);
+
+for (i = 0; i < numOfRows; i++) {
+    elementsGrid[i] = new Array(numOfColumns).fill(null);
 }
 
-// for(i = 0; i < numElements; i++){
-    //     // context.clearRect(0, 0, width, height);
-    //     context.fillText(getRandomChar(), xRandomNum, yRandomNum, width);
-    //     console.log(xRandomNum);
-    // }
+for (i = 0; i < numElements; i++) {
+    drawOnRandomPos();
+}
+
+function drawOnRandomPos(){
+
+    var [X, Xpos] = getXorY(numOfColumns); 
+    var [Y, Ypos] = getXorY(numOfRows);
+    var char = getRandomChar();
     
-    function getRandomNum(int, gridSize) {
-        var random = Math.random()*(int/gridSize);
-        random = Math.floor(random)*gridSize;
-        return random;
-    }
+    console.log(Y);
     
-    function getRandomChar(){
-        
+    if(elementsGrid[Y][X] != null) return;
+    
+    context.fillText(char, Xpos, Ypos);
+    elementsGrid[Y][X] = char;
+}
+
+/
+function getXorY(columnsOrRows) {
+    var gridPosition = Math.floor(Math.random() * columnsOrRows);
+    var screenPosition = gridPosition*gridSize;    
+
+    return [gridPosition, screenPosition]
+}
+
+function getRandomChar() {
+
     const ascii = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    var randomChar = Math.random()*ascii.length;
-    
+    var randomChar = Math.random() * ascii.length;
+
     return ascii.charAt(randomChar);
 }

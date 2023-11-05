@@ -7,10 +7,12 @@ body {
 
 .Matrix {
   background-color: rgb(120, 120, 224);
-  height: 101.50%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   font-size: 12px;
   position: absolute;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
