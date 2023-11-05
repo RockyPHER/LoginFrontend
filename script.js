@@ -40,7 +40,11 @@ function drawOnRandomPos(){
     elementsGrid[Y][X] = char;
 }
 
-/
+context.addEventListener("mousemove", e => {
+        
+})
+
+
 function getXorY(columnsOrRows) {
     var gridPosition = Math.floor(Math.random() * columnsOrRows);
     var screenPosition = gridPosition*gridSize;    

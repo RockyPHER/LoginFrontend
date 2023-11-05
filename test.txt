@@ -1,0 +1,54 @@
+window.onload = function () {
+    var canvas = document.getElementById("canvas");
+  
+    var screen = window.screen;
+    var width = (canvas.width = screen.width);
+    var height = (canvas.height = screen.height);
+    var context = canvas.getContext("2d");
+  
+    var darkenScreen = () => {
+      context.fillStyle = `rgba(0,0,0,0.6)`;
+      context.fillRect(0, 0, width, height);
+    }
+    setInterval(darkenScreen, 60)
+  
+    function getMousePos(canvas, evt) {
+      var rect = canvas.getBoundingClientRect();
+      return {
+        x: (evt.clientX - rect.left) / (rect.right - rect.left) * canvas.width,
+        y: (evt.clientY - rect.top) / (rect.bottom - rect.top) * canvas.height
+      };
+    }
+  
+    canvas.addEventListener("mousemove", e => {
+      const size = 16;
+      const { x, y } = getMousePos(canvas, e);
+      context.fillStyle = `rgba(0,255,200,1)`
+      context.fillRect(x, y, 16, 16);
+      const top = { x: x, y: y - size };
+      const bottom = { x: x, y: y + size };
+      const left = { x: x - size, y: y };
+      const right = { x: x + size, y: y, add: () => { this.x += size } };
+      const coordinates = [
+        top,
+        bottom,
+        left,
+        right
+      ]
+      let opacity = 1;
+      const interval = setInterval(() => {
+        coordinates.forEach(coord => {
+          context.fillStyle = `rgba(0,255,200,${opacity})`;
+          context.fillRect(coord.x, coord.y, 16, 16);
+        })
+        top.y -= size;
+        bottom.y += size;
+        left.x -= size;
+        right.x += size;
+        opacity -= 0.1;
+      }, 60)
+      setTimeout(() => {
+        clearInterval(interval)
+      }, 1000)
+    })
+  }
